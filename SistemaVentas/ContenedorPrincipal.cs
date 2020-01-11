@@ -89,7 +89,7 @@ namespace SistemaVentas {
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e) {
-            //Menu: Mantenimiento-Clientes
+            //Menu: Mantenimiento-Clientes...
             MantenimientoClientes mantCli = new MantenimientoClientes();
             mantCli.MdiParent = this;
             mantCli.Show();
@@ -101,3 +101,4 @@ namespace SistemaVentas {
         }
     }
 }
+W
