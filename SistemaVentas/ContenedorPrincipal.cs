@@ -99,6 +99,12 @@ namespace SistemaVentas {
             //Cerrar aplicación
             Application.Exit();
         }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e) {
+            //Menu: Mantenimiento-Productos
+            MantenimientoProductos mantPro = new MantenimientoProductos();
+            mantPro.MdiParent = this;
+            mantPro.Show();
+        }
     }
 }
-W
