@@ -16,6 +16,7 @@ Sistema Ventas en C# - Aplicación de Escritorio
 ***Instalación***
 
 Ejecutar instalador de la carpeta "Ejecutable"
+
 Copiar Base de Datos en SQL Server
 
 ***App***
