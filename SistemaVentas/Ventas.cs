@@ -10,9 +10,13 @@ using System.Windows.Forms;
 using LibreriaDLL;
 
 namespace SistemaVentas {
-    public partial class ConsultarCliente : Consultas {
-        public ConsultarCliente() {
+    public partial class Ventas : Consultas {
+        public Ventas() {
             InitializeComponent();
+        }
+
+        private void Ventas_Load(object sender, EventArgs e) {
+            dataGridView1.DataSource = mostrarInfoDG("Facturas").Tables[0];
         }
 
         //Boton de Buscar
@@ -20,7 +24,7 @@ namespace SistemaVentas {
             if (string.IsNullOrEmpty(textBox1.Text.Trim()) == false) {//sino null o vacio
                 try {
                     DataSet dataset;
-                    string buscar = "Select * from Clientes WHERE nombre_cliente LIKE ('%" + textBox1.Text.Trim() + "%')";//alguna letra % %
+                    string buscar = "Select * from Facturas WHERE numeroFactura LIKE ('%" + textBox1.Text.Trim() + "%')";//alguna letra % %
 
                     dataset = Biblioteca.Herramientas(buscar);
 
@@ -31,18 +35,6 @@ namespace SistemaVentas {
                     MessageBox.Show("No se puede conectar, Error: " + error.Message);
                 }
             }
-        }
-
-        private void ConsultarCliente_Load(object sender, EventArgs e) {
-            dataGridView1.DataSource = mostrarInfoDG("Clientes").Tables[0];
-        }
-
-        private void label4_Click(object sender, EventArgs e) {
-
-        }
-
-        private void BtnSeleccionar_Click(object sender, EventArgs e) {
-
         }
     }
 }

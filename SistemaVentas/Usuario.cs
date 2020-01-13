@@ -34,10 +34,12 @@ namespace SistemaVentas {
             lCodigo.Text = Data.Tables[0].Rows[0]["id_usuario"].ToString();
 
             //Imagen
-            //Obntener imagen
+            //Obtener imagen
             string imagen = Data.Tables[0].Rows[0]["imagen"].ToString();
             Console.WriteLine("asasas: "+ imagen);
             pictureBox1.Image = Image.FromFile(imagen);//visualizar la imagen en el picturebox
+                                                         
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -45,6 +47,10 @@ namespace SistemaVentas {
             ContenedorPrincipal con_principal = new ContenedorPrincipal();
             this.Hide();
             con_principal.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) {
+
         }
     }
 }

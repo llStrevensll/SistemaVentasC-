@@ -126,5 +126,12 @@ namespace SistemaVentas {
             facturacion.MdiParent = this;
             facturacion.Show();
         }
+
+        //Boton de Ventas
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e) {
+            Ventas ventas = new Ventas();
+            ventas.MdiParent = this;
+            ventas.Show();
+        }
     }
 }

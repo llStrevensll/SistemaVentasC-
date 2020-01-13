@@ -38,6 +38,8 @@ namespace SistemaVentas {
             //Ontener imagen
             string imagen = Data.Tables[0].Rows[0]["imagen"].ToString();
             pictureBox1.Image = Image.FromFile(imagen);//visualizar la imagen en el picturebox
+
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
         }
 
         private void lAdminUser_Click(object sender, EventArgs e) {
