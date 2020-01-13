@@ -5,6 +5,7 @@ Sistema Ventas en C# - Aplicación de Escritorio
 - Windows Forms
 - MDI (Interfaz de múltiples documentos)
 - SQL Server
+- Procedimientos Almacenados
 - Creación Libreria
 - CRUD Clientes y Productos
 - Login
