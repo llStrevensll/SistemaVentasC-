@@ -63,6 +63,7 @@ Copiar Base de Datos en SQL Server
 </p>
 
 **Opcion de Organizar ventanas**
+
 <p align="center">
   <img src="https://github.com/llStrevensll/SistemaVentasC-/blob/master/ImgSistemaVenta/SV9.PNG?raw=true" alt="SV9"/>
 </p>
@@ -73,7 +74,7 @@ Copiar Base de Datos en SQL Server
   <img src="https://github.com/llStrevensll/SistemaVentasC-/blob/master/ImgSistemaVenta/SV10.PNG?raw=true" alt="SV10"/>
 </p>
 
-**Seleccionar el Cliente y Productos **
+**Seleccionar Cliente Y Productos**
 <p align="center">
   <img src="https://github.com/llStrevensll/SistemaVentasC-/blob/master/ImgSistemaVenta/SV11.PNG?raw=true" alt="SV11"/>
 </p>
