@@ -81,13 +81,24 @@ namespace SistemaVentas {
 
         }
 
+        //Boton Consultar
         private void button1_Click(object sender, EventArgs e) {
-
+            ConsultarCliente consultarCliente = new ConsultarCliente();
+            consultarCliente.Show();
         }
 
         private void textId_Cliente_TextChanged(object sender, EventArgs e) {
             //Eliminar los errores
             errorProvider1.Clear();
+        }
+
+        //Boton Nuevo Registro
+        private void button4_Click(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(textId_Cliente.Text.Trim()) == false && string.IsNullOrEmpty(textId_Nombre.Text.Trim()) == false && string.IsNullOrEmpty(textId_Apellido.Text.Trim()) == false) {
+                textId_Cliente.Text = "";
+                textId_Nombre.Text = "";
+                textId_Apellido.Text = "";
+            }
         }
     }
 }

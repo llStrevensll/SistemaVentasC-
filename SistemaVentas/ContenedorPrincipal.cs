@@ -106,5 +106,25 @@ namespace SistemaVentas {
             mantPro.MdiParent = this;
             mantPro.Show();
         }
+
+        //Ventanas de Consultar
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e) {
+            ConsultarProducto consultarProducto = new ConsultarProducto();
+            consultarProducto.MdiParent = this;
+            consultarProducto.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e) {
+            ConsultarCliente consultarCliente = new ConsultarCliente();
+            consultarCliente.MdiParent = this;
+            consultarCliente.Show();
+        }
+
+        //Ventana de Facturacion
+        private void facturaciónToolStripMenuItem_Click(object sender, EventArgs e) {
+            Facturacion facturacion = new Facturacion();
+            facturacion.MdiParent = this;
+            facturacion.Show();
+        }
     }
 }

@@ -27,11 +27,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textId_Producto = new System.Windows.Forms.TextBox();
-            this.textPrecio = new System.Windows.Forms.TextBox();
-            this.textDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textId_Producto = new LibreriaDLL.ErrorTxtBox();
+            this.textPrecio = new LibreriaDLL.ErrorTxtBox();
+            this.textDescripcion = new LibreriaDLL.ErrorTxtBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,6 +40,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(44, 311);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -55,6 +57,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -93,29 +96,6 @@
             this.label3.Text = "Precio";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textId_Producto
-            // 
-            this.textId_Producto.Location = new System.Drawing.Point(134, 101);
-            this.textId_Producto.Name = "textId_Producto";
-            this.textId_Producto.Size = new System.Drawing.Size(171, 20);
-            this.textId_Producto.TabIndex = 8;
-            this.textId_Producto.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textPrecio
-            // 
-            this.textPrecio.Location = new System.Drawing.Point(134, 232);
-            this.textPrecio.Name = "textPrecio";
-            this.textPrecio.Size = new System.Drawing.Size(171, 20);
-            this.textPrecio.TabIndex = 9;
-            // 
-            // textDescripcion
-            // 
-            this.textDescripcion.Location = new System.Drawing.Point(134, 144);
-            this.textDescripcion.Multiline = true;
-            this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(171, 63);
-            this.textDescripcion.TabIndex = 10;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -140,16 +120,45 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // textId_Producto
+            // 
+            this.textId_Producto.Location = new System.Drawing.Point(134, 97);
+            this.textId_Producto.Name = "textId_Producto";
+            this.textId_Producto.Size = new System.Drawing.Size(171, 20);
+            this.textId_Producto.TabIndex = 14;
+            this.textId_Producto.Validar = true;
+            this.textId_Producto.ValidarNumeros = true;
+            this.textId_Producto.TextChanged += new System.EventHandler(this.textId_Producto_TextChanged);
+            // 
+            // textPrecio
+            // 
+            this.textPrecio.Location = new System.Drawing.Point(132, 232);
+            this.textPrecio.Name = "textPrecio";
+            this.textPrecio.Size = new System.Drawing.Size(173, 20);
+            this.textPrecio.TabIndex = 15;
+            this.textPrecio.Validar = true;
+            this.textPrecio.ValidarNumeros = false;
+            // 
+            // textDescripcion
+            // 
+            this.textDescripcion.Location = new System.Drawing.Point(132, 148);
+            this.textDescripcion.Multiline = true;
+            this.textDescripcion.Name = "textDescripcion";
+            this.textDescripcion.Size = new System.Drawing.Size(173, 61);
+            this.textDescripcion.TabIndex = 16;
+            this.textDescripcion.Validar = true;
+            this.textDescripcion.ValidarNumeros = false;
+            // 
             // MantenimientoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 430);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.textDescripcion);
             this.Controls.Add(this.textPrecio);
             this.Controls.Add(this.textId_Producto);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -163,11 +172,12 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.textId_Producto, 0);
             this.Controls.SetChildIndex(this.textPrecio, 0);
             this.Controls.SetChildIndex(this.textDescripcion, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,10 +189,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textId_Producto;
-        private System.Windows.Forms.TextBox textPrecio;
-        private System.Windows.Forms.TextBox textDescripcion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private LibreriaDLL.ErrorTxtBox textId_Producto;
+        private LibreriaDLL.ErrorTxtBox textPrecio;
+        private LibreriaDLL.ErrorTxtBox textDescripcion;
     }
 }

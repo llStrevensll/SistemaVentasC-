@@ -48,6 +48,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(280, 311);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnSalir
             // 

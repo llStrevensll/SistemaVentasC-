@@ -29,16 +29,21 @@ namespace SistemaVentas {
 
         //Guardar Producto en la BD
         public override Boolean Guardar() {
-            try {
-                //EXEC-> Llamar al procedimiento almacenado
-                string insertar = string.Format("EXEC ActualizarProductos '{0}', '{1}', '{2}'", textId_Producto.Text.Trim(), textDescripcion.Text.Trim(), textPrecio.Text.Trim());
-                Biblioteca.Herramientas(insertar);
-                MessageBox.Show("Producto guardado correctamente");
-                return true;
-            } catch (Exception error) {
-                MessageBox.Show("Ha ocurrudo un error" + error);
+            if (Biblioteca.ValidarFormulario(this, errorProvider1) == false) {
+                try {
+                    //EXEC-> Llamar al procedimiento almacenado
+                    string insertar = string.Format("EXEC ActualizarProductos '{0}', '{1}', '{2}'", textId_Producto.Text.Trim(), textDescripcion.Text.Trim(), textPrecio.Text.Trim());
+                    Biblioteca.Herramientas(insertar);
+                    MessageBox.Show("Producto guardado correctamente");
+                    return true;
+                } catch (Exception error) {
+                    MessageBox.Show("Ha ocurrudo un error" + error);
+                    return false;
+                }
+            } else {
                 return false;
             }
+                
         }
 
         //Eliminar el producto en la BD
@@ -63,6 +68,30 @@ namespace SistemaVentas {
 
         private void button2_Click(object sender, EventArgs e) {
 
+        }
+
+        private void textId_Producto_TextChanged(object sender, EventArgs e) {
+            //Eliminar los errores
+            errorProvider1.Clear();
+        }
+
+        private void textDescripcion_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        //Boton Nuevo Registro
+        private void button4_Click(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(textId_Producto.Text.Trim()) == false && string.IsNullOrEmpty(textDescripcion.Text.Trim()) == false && string.IsNullOrEmpty(textPrecio.Text.Trim()) == false) {
+                textId_Producto.Text = "";
+                textDescripcion.Text = "";
+                textPrecio.Text = "";
+            }
+        }
+
+        //Boton Consultar Clientes
+        private void button1_Click(object sender, EventArgs e) {
+            ConsultarProducto consultarProducto = new ConsultarProducto();
+            consultarProducto.Show();
         }
     }
 }

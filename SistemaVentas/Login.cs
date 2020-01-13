@@ -58,5 +58,25 @@ namespace SistemaVentas {
             //Cerrar aplicación
             Application.Exit();
         }
+
+        private void btnSalir_MouseEnter(object sender, EventArgs e) {
+            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnSalir_MouseHover(object sender, EventArgs e) {
+            btnSalir.BackColor = Color.FromArgb(255, 23, 68);
+            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(255, 23, 68);
+            btnSalir.ForeColor = Color.White;
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e) {
+            btnSalir.BackColor = Color.White;
+            btnSalir.FlatAppearance.BorderColor = Color.White;
+            btnSalir.ForeColor = Color.Black;
+        }
     }
 }
