@@ -6,7 +6,6 @@ Sistema Ventas en C# - Aplicación de Escritorio
 - MDI (Interfaz de múltiples documentos)
 - SQL Server
 - Creación Libreria
-- Models: Mongoose
 - CRUD Clientes y Productos
 - Login
 - Validación
